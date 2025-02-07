@@ -10,8 +10,17 @@
    
     height: 2%;
     width: 44%;
-   
-    
+ 
     border-radius: 10%;
 }
-
+#nav_id{
+  margin-right: 40%;
+}
+#form_teachers{
+  margin-top: 6%;
+  src: url(images/image.png);  
+}
+#form_register{
+  box-shadow: 0 4px 8px 0 rgba(73, 47, 47, 0.2), 0 6px 20px 0 rgba(23, 18, 18, 0.19);
+  background-color:  rgba(2, 14, 73, 0.677);
+}
