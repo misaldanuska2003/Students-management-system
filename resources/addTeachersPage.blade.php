@@ -2,7 +2,7 @@
 <div class="flex">
 <x-sideBar />
 </div>
-<section class="bg-gray-50 dark:bg-white">
+<section class="bg-gray-50 dark:bg-white" >
   <div class="flex flex-col items-center justify-items-start px-6 py-2 mx-auto md:h-screen lg:py-0" id="form_teachers">
       
       <div id="form_register" class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0  dark:border-gray-700">
