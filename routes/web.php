@@ -21,7 +21,13 @@ Route::get('/teachers', function () {
     return view('teachersPage');
 });
 Route::get('/addTeachers', function () {
-    return view('addTeachersPage');
+    return view('teachersRegisterPage');
 });
+
+Route::get('/test', function () {
+    return view('testPage');
+});
+
+
 
 require __DIR__.'/auth.php';

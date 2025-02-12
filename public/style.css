@@ -1,5 +1,5 @@
 .container{
-  width: 10;
+  
   background-color: rgb(50, 78, 96);
     background-size: 10%;
   border-radius: 10%;
@@ -26,4 +26,10 @@
 #img{
   margin-top:7% ;
   
+}
+h3{
+  margin-top: 20%;
+}
+#techerId{
+  margin-top: -10%;
 }
