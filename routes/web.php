@@ -24,17 +24,24 @@ Route::get('/teachers', function () {
 Route::get('/addTeachers', function () {
     return view('teachersRegisterPage');
 });
+Route::get('/viewTeachers', function () {
+    return view('teachersViewPage');
+});
 
 
 Route::post('/registerTeacher', function () {
     request()->validate([
+        'image'=> ['required'],
         'name'=> ['required'],
         'email'=> ['required'],
         'contact'=> ['required'],
         'password'=> ['required'],
         ]);
 
-        Teachers::create([  
+        $imagePath = request('image')->store('images', 'public');
+
+        Teachers::create([ 
+            'image'=>$imagePath, 
             'name'=> request('name'),
             'email'=> request('email'),
             'contact'=> request('contact'),

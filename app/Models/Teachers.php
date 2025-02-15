@@ -8,6 +8,6 @@ class Teachers extends Model
 {
     protected $table = "teachers";
     protected $fillable = [
-        "name","email","contact","password",
+        "image","name","email","contact","password",
         ];
 }
