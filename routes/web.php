@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\Teachers;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -24,8 +25,26 @@ Route::get('/addTeachers', function () {
     return view('teachersRegisterPage');
 });
 
-Route::get('/test', function () {
-    return view('testPage');
+
+Route::post('/registerTeacher', function () {
+    request()->validate([
+        'name'=> ['required'],
+        'email'=> ['required'],
+        'contact'=> ['required'],
+        'password'=> ['required'],
+        ]);
+
+        Teachers::create([  
+            'name'=> request('name'),
+            'email'=> request('email'),
+            'contact'=> request('contact'),
+            'password'=> request('password'),
+            ]);
+
+            return redirect('/teachers');
+
+
+   
 });
 
 
