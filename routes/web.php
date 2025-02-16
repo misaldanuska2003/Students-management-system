@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Models\Teachers;
+use App\Models\Teacher;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -28,6 +29,10 @@ Route::get('/viewTeachers', function () {
     return view('teachersViewPage');
 });
 
+Route::get('/viewTeacher', function () {
+   $teachers = Teachers::all();
+    return view('teachersViewPage', ['teachers'=>$teachers]);
+});
 
 Route::post('/registerTeacher', function () {
     request()->validate([
@@ -48,7 +53,7 @@ Route::post('/registerTeacher', function () {
             'password'=> request('password'),
             ]);
 
-            return redirect('/teachers');
+            return redirect('/viewTeacher');
 
 
    
