@@ -68,7 +68,7 @@ body {
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
   <div>
-            <a href="#" class="flex items-center p-2 text-gray-100 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-blue-700 group">
+            <a href="" class="flex items-center p-2 text-gray-100 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-blue-700 group">
                
                <span class="flex-1 ms-3 whitespace-nowrap">Teachers</span>
             </a>
