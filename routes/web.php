@@ -33,6 +33,10 @@ Route::get('/viewTeacher', function () {
    $teachers = Teachers::all();
     return view('teachersViewPage', ['teachers'=>$teachers]);
 });
+Route::get('/viewTeachersTable', function () {
+    $teachers = Teachers::all();
+     return view('teachersTable', ['teachers'=>$teachers]);
+ });
 
 Route::post('/registerTeacher', function () {
     request()->validate([

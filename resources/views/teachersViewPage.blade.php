@@ -1,12 +1,12 @@
 <x-app-layout>
     <h1>hello teachers.......</h1>
-<div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 gap-3">
+<div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 gap-3  flex">
 
 @foreach ($teachers as $teacher)
 
 
 
-  <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-white dark:border-gray-700">
+  <div class="max-w-sm bg-white border border-gray-200 rounded-lg  dark:bg-white dark:border-white shadow-lg ">
     <a href="#">
     </a>
     <div class="p-5">
