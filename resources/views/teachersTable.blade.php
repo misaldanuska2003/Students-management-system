@@ -98,18 +98,30 @@
                     </div>
                 </td>
                 <td class="px-6 py-4"> 
-                    <a href="#" class="fonte"><svg class="w-[31px] h-[31px] text-red-700 dark:text-red hover:bg-red-300 focus:ring-4 focus:ring-red-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15v3c0 .5523.44772 1 1 1h16c.5523 0 1-.4477 1-1v-3M3 15V6c0-.55228.44772-1 1-1h16c.5523 0 1 .44772 1 1v9M3 15h18M8 15v4m4-4v4m4-4v4m-5.5061-7.4939L12 10m0 0 1.5061-1.50614M12 10l1.5061 1.5061M12 10l-1.5061-1.50614"/>
+                    <form action="/deleteTeachers/{{ $teacher->id }}" method="POST" class="fonte">
+                   @csrf
+                     @method('DELETE')
+                     <button>
+                        <svg class="w-[31px] h-[31px] text-red-700 dark:text-red hover:bg-red-300 focus:ring-4 focus:ring-red-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15v3c0 .5523.44772 1 1 1h16c.5523 0 1-.4477 1-1v-3M3 15V6c0-.55228.44772-1 1-1h16c.5523 0 1 .44772 1 1v9M3 15h18M8 15v4m4-4v4m4-4v4m-5.5061-7.4939L12 10m0 0 1.5061-1.50614M12 10l1.5061 1.5061M12 10l-1.5061-1.50614"/>
 </svg>
-</a>
-
+</form>
+</button>
 
                 </td>
                 <td>
-                    <a href="#" class="fonte"><svg class="w-[31px] h-[31px] text-yellow-600 dark:text-red hover:bg-yellow-100 focus:ring-4 focus:ring-yellow-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+
+                <form action="/teachersUpdatePage/{{ $teacher->id }}" method="post">
+                    @csrf
+                    @method('PUT')
+                    <button>
+                    <svg class="w-[31px] h-[31px] text-yellow-600 dark:text-red hover:bg-yellow-100 focus:ring-4 focus:ring-yellow-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
   <path fill-rule="evenodd" d="M5 8a4 4 0 1 1 7.796 1.263l-2.533 2.534A4 4 0 0 1 5 8Zm4.06 5H7a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h2.172a2.999 2.999 0 0 1-.114-1.588l.674-3.372a3 3 0 0 1 .82-1.533L9.06 13Zm9.032-5a2.907 2.907 0 0 0-2.056.852L9.967 14.92a1 1 0 0 0-.273.51l-.675 3.373a1 1 0 0 0 1.177 1.177l3.372-.675a1 1 0 0 0 .511-.273l6.07-6.07a2.91 2.91 0 0 0-.944-4.742A2.907 2.907 0 0 0 18.092 8Z" clip-rule="evenodd"/>
 </svg>
-</a>
+</button>
+                </form>
+                    
                 </td>
             </tr>
             
@@ -120,6 +132,10 @@
     </table>
     </div>    
 </div>
+
+
+
+
 
 
 </x-app-layout>

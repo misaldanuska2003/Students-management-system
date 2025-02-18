@@ -37,7 +37,16 @@ Route::get('/viewTeachersTable', function () {
     $teachers = Teachers::all();
      return view('teachersTable', ['teachers'=>$teachers]);
  });
-
+Route::delete('/deleteTeachers/{id}', function ($id) {
+    
+    Teachers::where('id', $id)->delete();
+    return redirect('viewTeachersTable');
+});
+// Route::get('/teachersUpdatePage/{id}', function ($id) {
+    
+//     Teachers::where('id', $id)->update();
+//     return redirect('teachersUpdate');
+// });
 
 
 Route::post('/registerTeacher', function () {
