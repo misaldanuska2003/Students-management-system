@@ -1,6 +1,7 @@
 <x-app-layout>
+    
     <h1>hello teachers.......</h1>
-<div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 gap-3  flex">
+<div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 gap-3  ">
 
 @foreach ($teachers as $teacher)
 

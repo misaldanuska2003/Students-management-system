@@ -38,6 +38,8 @@ Route::get('/viewTeachersTable', function () {
      return view('teachersTable', ['teachers'=>$teachers]);
  });
 
+
+
 Route::post('/registerTeacher', function () {
     request()->validate([
         'image'=> ['required'],
