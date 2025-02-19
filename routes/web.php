@@ -42,11 +42,11 @@ Route::delete('/deleteTeachers/{id}', function ($id) {
     Teachers::where('id', $id)->delete();
     return redirect('viewTeachersTable');
 });
-// Route::get('/teachersUpdatePage/{id}', function ($id) {
+Route::get('/teachersUpdatePage/{id}', function ($id) {
     
-//     Teachers::where('id', $id)->update();
-//     return redirect('teachersUpdate');
-// });
+    $teachers = Teachers::findOrFail($id);
+    return view('teachersUpdate', ['teacher' => $teachers]);
+});
 
 
 Route::post('/registerTeacher', function () {
@@ -74,6 +74,33 @@ Route::post('/registerTeacher', function () {
    
 });
 
+Route::put('/upTeacher/{id}', function ($id) {
+//    request()->([
+//     ]);
+
+request()->validate([
+    'image'=>['required'],
+    'name'=> ['required'],
+    'email'=> ['required'],
+    'contact'=> ['required'],
+    'password'=> ['required'],
+    ]);
+
+    $teacher = Teachers::findOrFail($id);
+
+    if (request('image')) {
+        $imagePath = request('image')->store('images', 'public');
+        $teacher->image = $imagePath;
+    }
+
+    $teacher->name = request('name');
+    $teacher->email = request('email');
+    $teacher->contact = request('contact');
+    $teacher->password = request('password');
+    $teacher->update();
+
+    return redirect('/viewTeachersTable');
+});
 
 
 require __DIR__.'/auth.php';

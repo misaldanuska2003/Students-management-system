@@ -5,7 +5,7 @@
 
 @foreach ($teachers as $teacher)
 
-
+@csrf
 
   <div class="max-w-sm bg-white border border-gray-200 rounded-lg  dark:bg-white dark:border-white shadow-lg ">
     <a href="#">
