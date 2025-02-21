@@ -134,7 +134,7 @@ Students::create(
     ]
 );
 
-return redirect('/');
+return redirect('/studentsTable');
 
 });
 Route::get('/studentsTable', function () {
@@ -147,8 +147,39 @@ Route::get('/studentsTable', function () {
 Route::delete('/deleteStudents/{id}',function($id){
     $deleteStudents=Students::find($id);
     $deleteStudents->delete();
+    return redirect('/studentsTable');
 });
 
+Route::get('/editPage/{id}',function($id){
+    $students=Students::find($id);
+    return view('studentsUpdatePage',['student'=>$students]);
+});
+Route::put('/upStudents/{id}',function($id){
+    Request()->validate([
+        
+        'name'=>['Required'],
+        'email'=>['Required'],
+        'contact'=>['Required'],
+        'age'=>['Required'],
+    ]);
+
+    
+    $student = Students::findOrFail($id);
+
+  
+    
+    $student->name = request('name');
+    $student->email = request('email');
+    $student->contact = request('contact');
+    $student->age = request('age');
+    $student->save();
+
+    return redirect('/studentsTable');
+
+   
+
+        
+});
 
 
 require __DIR__.'/auth.php';
