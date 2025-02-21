@@ -1,9 +1,14 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\Students;
 use App\Models\Teachers;
 use App\Models\Teacher;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
+use Symfony\Contracts\Service\Attribute\Required;
+
+use function Pest\Laravel\get;
 
 Route::get('/', function () {
     return view('welcome');
@@ -102,5 +107,49 @@ request()->validate([
     return redirect('/viewTeachersTable');
 });
 
+Route::get('/addStudent', function () {
+    return view('studentsRegister');
+});
+
+Route::post('/createStudent',function(){
+    Request()->validate([
+        'image'=>['Required'],
+        'name'=>['Required'],
+        'email'=>['Required'],
+        'password'=>['Required'],
+        'contact'=>['Required'],
+        'age'=>['Required'],
+    ]);
+    $imagesPath=request('image')->store('images','public');
+
+Students::create(
+    [
+        'image'=>$imagesPath,
+        'name'=>request('name'),
+        'email'=>request('email'),
+        'password'=>request('password'),
+        'contact'=>request('contact'),
+        'age'=>request('age')
+        
+    ]
+);
+
+return redirect('/');
+
+});
+Route::get('/studentsTable', function () {
+
+    $students=Students::all();
+
+    return view('studentsVeiw',['students'=>$students]);
+});
+
+Route::delete('/deleteStudents/{id}',function($id){
+    $deleteStudents=Students::find($id);
+    $deleteStudents->delete();
+});
+
+
 
 require __DIR__.'/auth.php';
+

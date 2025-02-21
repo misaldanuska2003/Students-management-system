@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Students extends Model
 {
-    protected $table = "";
-    protected $fillable = [ "name","email","contact",
-    ] ;
-    
+    protected $table = "students";
+    protected $fillable = [
+        "image","name","email","password","contact","age"
+        ];
 }
