@@ -7,6 +7,7 @@ use App\Models\Teacher;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
 use Symfony\Contracts\Service\Attribute\Required;
+use Illuminate\Support\Facades\View;
 
 use function Pest\Laravel\get;
 
