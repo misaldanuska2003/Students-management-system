@@ -17,9 +17,17 @@
         </div>
     </div>
 
-        <div class="container max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <img class="img" src="{{ asset('images/image.png') }}" alt="">
+        
+    <div class="container17 max-w-7xl mx-auto sm:col-6 lg:col-8 grid grid-flow-col grid-rows-3 gap-4 bg-gray-700" style="border-radius: 10%; margin-top: 0%;" id="img">
             
+            
+            <div class="row-span-3"><img class="img" src="{{ asset('images/image.png') }}" alt=""></div>
+            <div class="col-span-2 row-span-2"><h3 class="text-6xl text-white"></h3></div>
+            
+  
+        
         </div>
+
+
    
 </x-app-layout>

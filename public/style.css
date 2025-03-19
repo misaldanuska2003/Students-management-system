@@ -39,3 +39,7 @@ h3{
 #teacherUpdate{
   margin-top: 7%;
 }
+#homepage{
+  background-image: url(images/image.png);
+  background-color: aqua;
+}
