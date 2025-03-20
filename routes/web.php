@@ -25,6 +25,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/adminDashBoard', function () {
+    return view('adminDashBoard');
+});
+
 Route::get('/teachers', function () {
     return view('teachersPage');
 });
