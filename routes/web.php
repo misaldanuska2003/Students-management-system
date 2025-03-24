@@ -29,6 +29,10 @@ Route::get('/adminDashBoard', function () {
     return view('adminDashBoard');
 });
 
+Route::get('/paymentPage', function () {
+    return view('paymentPage');
+});
+
 Route::get('/teachers', function () {
     return view('teachersPage');
 });
